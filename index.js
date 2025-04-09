@@ -24,6 +24,12 @@ app.use((err, req, res, next) => {
 
 
 const PORT = process.env.PORT || 8000;
+
+app.get('/', (req, res) => {
+    res.send('server is up and running...');
+});
+
+
 connectDB(process.env.MONGO_URI || 'mongodb://localhost:27017/Feedbacks')
 .then(()=>{
     app.listen(process.env.PORT || 8000,()=>{
